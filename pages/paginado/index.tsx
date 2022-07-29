@@ -17,7 +17,7 @@ interface Props {
 
 const PaginadoPage = () => {
 
-  const [currentUrl, setCurrentUrl] = useState("https://modyo-pokemon-backend-api.herokuapp.com/api/v1/pokemonfull?offset=0&limit=12");
+  const [currentUrl, setCurrentUrl] = useState("https://modyo-pokemon-backend-api.herokuapp.com/api/v1/pokemonfull?offset=0&limit=8");
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(0);
   const [nextUrl, setNextUrl] = useState("");
@@ -71,7 +71,6 @@ const PaginadoPage = () => {
   if (loading) { return "Cargando..."}
   return (
       <Layout title='Pokémons - Paginado'>
-        <h1>Paginado</h1>
         <Grid.Container gap={ 2 } justify='flex-start'>
         <Grid xs={12}>
           { previousUrl != "" && <Button onPress={goPagePrevious} color="gradient">Anterior</Button> }

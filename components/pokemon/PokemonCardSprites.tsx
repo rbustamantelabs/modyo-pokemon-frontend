@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useRouter } from 'next/router';
 
-import { Grid, Card, Row, Text, Container, Image } from '@nextui-org/react';
+import { Tooltip, Grid, Card, Row, Text, Container, Image } from '@nextui-org/react';
 
 import { SmallPokemon } from '../../interfaces';
 
@@ -18,18 +18,22 @@ export const PokemonCardSprites: FC<Props> = ({ pokemon }) => {
     }
 
     return (
-        <Grid xs={ 6 } sm={ 3 } md={ 2 } xl={ 1 } key={ pokemon.id }>
+ 
+        <Grid xs={ 12 } sm={ 6 } md={ 3 } xl={ 2 } key={ pokemon.id }>
             <Card 
                 isHoverable 
                 isPressable
                 onClick={ onClick }
             >
                 <Card.Body css={{ p: 1 }}>
+                <Tooltip content={"Pokémon: " + pokemon.name} rounded placement="rightStart" color="invert">
+
                     <Card.Image 
                         src={ pokemon.img }
                         width="100%"
                         height={ 140 }
                     />
+                    </Tooltip>
                     <h6>Sprites:</h6>
                     <Container direction='row' display='flex' gap={ 0 }>
                         {   pokemon.pokemoninfo != null && 
@@ -38,6 +42,7 @@ export const PokemonCardSprites: FC<Props> = ({ pokemon }) => {
                                 alt={ pokemon.name }
                                 width={ 32 }
                                 height={ 32 }
+                                title={ pokemon.name }
                             />
                         }
                         {   pokemon.pokemoninfo != null && 
@@ -46,6 +51,8 @@ export const PokemonCardSprites: FC<Props> = ({ pokemon }) => {
                             alt={ pokemon.name }
                             width={ 32 }
                             height={ 32 }
+                            title={ "Front Shiny" }
+
                         />
                     }
                     {   pokemon.pokemoninfo != null && 
@@ -54,6 +61,8 @@ export const PokemonCardSprites: FC<Props> = ({ pokemon }) => {
                             alt={ pokemon.name }
                             width={ 32 }
                             height={ 32 }
+                            title={ "Back Shiny" }
+
                         />
                     }
                     </Container>
