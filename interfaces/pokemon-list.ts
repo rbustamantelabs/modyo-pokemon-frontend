@@ -1,3 +1,4 @@
+import { Pokemon } from './pokemon-full';
 
 export interface PokemonListResponse {
     count:     number;
@@ -11,4 +12,5 @@ export interface SmallPokemon {
     url:  string;
     id:   number;
     img:  string;
+    pokemoninfo: Pokemon;
 }

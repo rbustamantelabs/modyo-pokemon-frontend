@@ -38,7 +38,11 @@ export const Navbar = () => {
                     <Text color='white'>Favoritos</Text>
                 </Link>
             </NextLink> */}
-
+            <NextLink href="/paginado" passHref>
+                <Link css={{ marginRight: '10px' }}>
+                    <Text color='white'>Paginado</Text>
+                </Link>
+            </NextLink>
         </div>
     )
 };

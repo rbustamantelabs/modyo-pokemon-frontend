@@ -13,7 +13,7 @@ interface Props {
 const PokemonPage: NextPage<Props> = ({ pokemon }) => {
 
   // console.log(pokemon);
-console.log( process.env.MODYO_POKEMON_BACKEND);
+// console.log("env", process.env.MODYO_POKEMON_BACKEND);
     
     return (
         <Layout title={pokemon.name}>
@@ -96,10 +96,10 @@ console.log( process.env.MODYO_POKEMON_BACKEND);
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
-  const pokemons151 = [...Array(151)].map( ( value, index ) => `${ index + 1 }` );
+  const pokemons120 = [...Array(120)].map( ( value, index ) => `${ index + 1 }` );
 
   return {
-    paths: pokemons151.map( id => ({
+    paths: pokemons120.map( id => ({
       params: { id }
     })),
     fallback: false
