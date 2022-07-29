@@ -1,0 +1,9 @@
+
+
+yarn add @nextui-org/react
+yarn add axios
+
+
+https://quicktype.io/
+
+
